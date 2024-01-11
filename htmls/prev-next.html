@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="title"></div>
+    <div id="price"></div>
+    <img src=""  alt="image" id="img" height="130px" width="140px"><br>
+    <button onclick="prev()"><i class="fas fa-chevron-left"></i></button>
+    <button onclick="next()"><i class="fas fa-chevron-right"></i></button>
+    <script>
+      let products = [
+    {
+        
+        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "price": 109.95,
+        "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+    },
+    {
+        
+        "title": "Mens Casual Premium Slim Fit T-Shirts ",
+        "price": 22.3,
+        "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+    },
+    {
+        "title": "Mens Cotton Jacket",
+        "price": 55.99,
+        "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+    },
+      ];
+      let currentIndex = 0;
+      const img=document.getElementById("img")
+      function prev() {
+        currentIndex--;
+        if (currentIndex < 0) currentIndex = products.length - 1;
+        document.getElementById("title").textContent = 
+        
+        document.getElementById("price").textContent = products[currentIndex].price;
+        img.src=products[currentIndex].image
+      }
+      function next() {
+        currentIndex++;
+        if (currentIndex > products.length - 1) currentIndex = 0;
+        document.getElementById("title").textContent = products[currentIndex].title;
+        document.getElementById("price").textContent = products[currentIndex].price;
+        img.src=products[currentIndex].image
+      }
+      window.addEventListener("load", function () {
+        document.getElementById("title").textContent = products[0].title;
+        document.getElementById("price").textContent = products[0].price;
+        img.src=products[0].image
+      });
+    </script>
+  </body>
+</html>

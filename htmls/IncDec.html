@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         let count=0;
+        function IncrementDecrement(op){   
+            if(op==='+')
+              count++
+            else if(count>0)
+              count--;
+            document.getElementById('result').innerHTML=count
+        }
+    </script>
+</head>
+<body>
+    <button onclick="IncrementDecrement('+')">+</button>
+    <span id="result">0</span>
+    <button onclick="IncrementDecrement('-')">-</button>
+</body>
+</html>

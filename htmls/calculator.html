@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="number1" id="num1" class="num1-class"><br>
+    <input type="number" name="number2" id="num2"><br>
+    <button type="button"  class="add-btn">+</button><button onclick="sub()" >-</button><br>
+    <button onclick="mul()" >*</button onclick="div()"><button>/</button>
+    <span id="result"></span>
+    <script>
+        const addBtn=document.getElementsByClassName('add-btn')
+        console.log(addBtn)
+        addBtn[0].addEventListener('click',function(){
+            alert('clicked')
+            let num1=document.getElementById('num1').value
+            let num2=document.getElementById('num2').value
+            document.getElementById('result').innerText=
+           `The sum of ${num1} and ${num2} is ${Number(num1)+Number(num2)}`
+        })
+    </script>
+</body>
+</html>
